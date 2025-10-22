@@ -1,0 +1,32 @@
+{
+  "name": "react-ssr1",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "start:express": "ts-node server-express.tsx",
+    "start:koa": "ts-node server-koa.tsx",
+    "start:client": "cross-env port=3008 npm run start --workspace client",
+    "build:client": "cross-env npm run build --workspace client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "express": "^5.1.0",
+    "koa": "^2.15.3",
+    "koa-mount": "^4.2.0",
+    "koa-router": "^14.0.0",
+    "koa-static": "^5.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

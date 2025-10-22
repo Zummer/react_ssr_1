@@ -15,7 +15,8 @@ export default (env: IEnvVariables) => {
     const isDev = mode === 'development';
     const isProd = mode === 'production';
 
-    debugger;
+    console.log('env', env);
+
     const config: webpack.Configuration = {
         mode,
         target: "web",
@@ -39,8 +40,9 @@ export default (env: IEnvVariables) => {
         },
         output: {
             filename: "[name].[contenthash].js",
-            path: path.resolve(__dirname, "build"),
+            path: path.resolve(__dirname, "build/static/js"),
             clean: true,
+            // publicPath: '/',
         },
         devtool: isDev ? 'inline-source-map' : 'source-map',
         devServer: isDev ? {

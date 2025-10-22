@@ -1,12 +1,5 @@
-import {createRoot} from 'react-dom/client';
-import { App } from './Components/App';
 
-const root = document.getElementById('root');
-
-if (!root) {
-    throw new Error('root not found');
-}
-
-const container = createRoot(root);
-
-container.render(<App />)
+import React from "react";
+import ReactDOMClient from "react-dom/client";
+import App from "./Components/App";
+ReactDOMClient.hydrateRoot(document.getElementById("root"), <App />);
