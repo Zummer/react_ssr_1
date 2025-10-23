@@ -1,8 +1,10 @@
+import style from './Cars.less';
+
 const Cars = () => {
     return <div>
         <h2>Cars</h2>
         <div>
-            <ul>
+            <ul className={style.list}>
                 <li>Ferrari</li>
                 <li>Porsche</li>
                 <li>Lamborghini</li>

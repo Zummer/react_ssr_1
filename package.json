@@ -1,32 +1,48 @@
 {
-  "name": "react-ssr1",
+  "name": "client",
   "version": "1.0.0",
   "description": "",
-  "workspaces": [
-    "client"
-  ],
   "scripts": {
-    "start:express": "ts-node server-express.tsx",
-    "start:koa": "ts-node server-koa.tsx",
-    "start:client": "cross-env port=3008 npm run start --workspace client",
-    "build:client": "cross-env npm run build --workspace client"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --env mode=production",
+    "start": "webpack serve",
+    "start:inspect": "node --inspect-brk ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^24.9.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.1",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^9.1.0",
+    "html-webpack-plugin": "^5.6.4",
+    "less": "^4.4.2",
+    "less-loader": "^12.3.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
   "dependencies": {
-    "@koa/router": "^12.0.0",
-    "express": "^5.1.0",
     "koa": "^2.15.3",
     "koa-mount": "^4.2.0",
     "koa-router": "^14.0.0",
     "koa-static": "^5.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
-  },
-  "devDependencies": {
-    "cross-env": "^10.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
   }
 }

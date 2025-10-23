@@ -4,7 +4,7 @@ import serve from 'koa-static';
 import path from 'path';
 
 import ReactDOMServer from 'react-dom/server';
-import AppSSR from "./client/src/Components/AppSSR";
+import AppSSR from "./src/Components/AppSSR";
 import fs from "fs";
 
 const ABORT_DELAY = 10000;
@@ -13,7 +13,7 @@ const app = new Koa();
 
 const bootstrapScripts = [];
 const bootstrapCSS = [];
-const staticPathRoot = "client/build/static";
+const staticPathRoot = "static";
 
 const ReadDirectoryContentToArray = (folderPath, array) => {
   fs.readdir(path.join(__dirname, folderPath), (err, files) => {
@@ -35,7 +35,7 @@ const ReadDirectoryContentToArray = (folderPath, array) => {
 ReadDirectoryContentToArray(`${staticPathRoot}/js`, bootstrapScripts);
 ReadDirectoryContentToArray(`${staticPathRoot}/css`, bootstrapCSS);
 
-app.use(serve(__dirname, '/client/build/static'));
+app.use(serve(__dirname, 'static'));
 
 const router = new Router();
 
@@ -47,10 +47,10 @@ async function render(ctx: Koa.Context) {
    */
   return new Promise((_resolve, reject) => {
     const stream = ReactDOMServer.renderToPipeableStream(
-          <AppSSR bootstrapCSS={[]}/>,
+          <AppSSR bootstrapCSS={bootstrapCSS}/>,
       {
         bootstrapScripts,
-        onShellReady() {
+        onAllReady() {
           ctx.respond = false;
           ctx.res.statusCode = didError ? 500 : 200;
           ctx.response.set('content-type', 'text/html');

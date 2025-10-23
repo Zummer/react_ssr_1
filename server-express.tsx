@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import path from "path";
-import AppSSR from "./client/src/Components/AppSSR";
+import AppSSR from "./src/Components/AppSSR";
 import express from "express";
 import fs from "fs";
 
@@ -10,7 +10,7 @@ const port = 3009;
 
 const bootstrapScripts = [];
 const bootstrapCSS = [];
-const staticPathRoot = "client/build/static";
+const staticPathRoot = "static";
 
 const ReadDirectoryContentToArray = (folderPath, array) => {
   fs.readdir(path.join(__dirname, folderPath), (err, files) => {
@@ -55,8 +55,8 @@ app.get('/', (req, res) => {
 });
 
 app.use(
-  "/client/build/static",
-  express.static(__dirname + "/client/build/static")
+  "/static",
+  express.static(__dirname + "/static")
 );
 
 app.listen(port, () => {
