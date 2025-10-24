@@ -38,6 +38,7 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "koa": "^2.15.3",
     "koa-mount": "^4.2.0",
     "koa-router": "^14.0.0",
