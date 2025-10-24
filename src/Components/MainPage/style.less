@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    padding: 32px;
+    padding: 16px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -53,9 +53,11 @@
         height: 200px;
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 540px) or (max-height: 540px) {
         .slogan2 {
-            font-size: 25px;
+            font-size: 20px;
+            padding: 8px;
+            border-radius: 8px;
         }
     }
 
@@ -80,6 +82,13 @@
     .name {
         height: 100px;
     }
+
+    @media (max-height: 540px) {
+        .slogan {
+            font-size: 25px;
+        }
+
+    }
 }
 
 .info {
@@ -101,7 +110,7 @@
         font-weight: 600;
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 540px) or (max-height: 540px) {
         .headerAgro {
             font-size: 46px;
         }
@@ -116,9 +125,16 @@
     }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 540px) or (max-height: 540px) {
     .info {
         font-size: 20px;
+        text-transform: none;
+    }
+}
+
+@media (max-height: 540px) {
+    .info {
+        flex-direction: row;
     }
 }
 
