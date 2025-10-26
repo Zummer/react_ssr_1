@@ -3,19 +3,19 @@ export const fileLoader = () => {
         test: /\.(png|jpe?g|gif|webp)$/i,
         use: [
             {
-                loader: 'file-loader',
+                loader: "file-loader",
                 options: {
-                    outputPath: 'images'
-                }
+                    outputPath: "images",
+                },
             },
             {
-                loader: 'image-webpack-loader',
+                loader: "image-webpack-loader",
                 options: {
                     webp: {
-                        quality: 75
-                    }
-                }
-          },
+                        quality: 75,
+                    },
+                },
+            },
         ],
-    }
-}
+    };
+};
