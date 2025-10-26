@@ -8,7 +8,8 @@
     "start": "webpack serve",
     "start:inspect": "node --inspect-brk ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production"
+    "build:prod": "webpack --env mode=production",
+    "server": "node build/server.js"
   },
   "keywords": [],
   "author": "",

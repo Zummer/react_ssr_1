@@ -35,7 +35,7 @@ const ReadDirectoryContentToArray = (folderPath, array) => {
 ReadDirectoryContentToArray(`${staticPathRoot}/js`, bootstrapScripts);
 ReadDirectoryContentToArray(`${staticPathRoot}/css`, bootstrapCSS);
 
-// app.use(serve(__dirname, 'static'));
+app.use(serve(__dirname, 'static'));
 
 const router = new Router();
 
@@ -46,7 +46,7 @@ async function render(ctx: Koa.Context) {
    * NOTE: use promise to force koa waiting for streaming.
    */
   return new Promise((_resolve, reject) => {
-    
+
     console.log('bootstrapScripts', bootstrapScripts);
     console.log('bootstrapCSS', bootstrapCSS);
 

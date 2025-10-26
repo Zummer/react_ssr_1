@@ -1,0 +1,19 @@
+networks:
+  net:
+
+services:
+  nginx:
+    image: nginx:stable:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    depends_on:
+      - server
+    networks:
+      - net
+  server:
+    build:
+      context: ./
+    networks:
+      - net

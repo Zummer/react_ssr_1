@@ -2,9 +2,8 @@ import path from "path";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { type Configuration as DevServerConfiguration } from "webpack-dev-server";
-import { svgLoader } from "./config/loaders/svgLoader";
-import { tsLoader } from "./config/loaders/tsLoader";
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import { svgLoader, tsLoader, styleLoader, fileLoader } from "./config/loaders";
+import { miniCss } from "./config/plugins/miniCss";
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 type TMode = 'production' | 'development';
@@ -31,41 +30,13 @@ export default (env: IEnvVariables) => {
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, "public", "index.html"),
             }),
-            new MiniCssExtractPlugin({
-                filename: "css/[name].[contenthash].css",
-                chunkFilename: "css/[name].[contenthash].css",
-            }),
+            miniCss(),
             new ForkTsCheckerWebpackPlugin(),
         ],
         module: {
             rules: [
-                {
-                    test: /\.(png|jpe?g|gif)$/i,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                outputPath: 'images'
-                            }
-                        },
-                    ],
-                },
-                {
-                    test: /\.(less|css)$/i,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        {
-                            loader: "css-loader",
-                            options: {
-                                modules: {
-                                    localIdentName: "[name]__[local]___[hash:base64:5]",
-                                namedExport: false,
-                                },	
-                            }
-                        },
-                        "less-loader",
-                    ],
-                },
+                fileLoader(),
+                styleLoader(),
                 tsLoader(),
                 svgLoader(),
             ],
@@ -80,7 +51,7 @@ export default (env: IEnvVariables) => {
             filename: "js/[name].[contenthash].js",
             path: path.resolve(__dirname, "build/static"),
             clean: true,
-            publicPath: '/static/',
+            publicPath: '/',
         },
         devtool: isDev ? 'inline-source-map' : 'source-map',
         devServer: {
@@ -96,41 +67,13 @@ export default (env: IEnvVariables) => {
             server: path.resolve(__dirname, "bootstrap.ts"),
         },
         plugins: [
-            new MiniCssExtractPlugin({
-                filename: "[name].[contenthash].css",
-                chunkFilename: "[name].[contenthash].css",
-            }),
+            miniCss(),
             new ForkTsCheckerWebpackPlugin(),
         ],
         module: {
             rules: [
-                {
-                    test: /\.(png|jpe?g|gif)$/i,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                outputPath: 'images'
-                            }
-                        },
-                    ],
-                },
-                {
-                    test: /\.(less|css)$/i,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        {
-                            loader: "css-loader",
-                            options: {
-                                modules: {
-                                    localIdentName: "[name]__[local]___[hash:base64:5]",
-                                namedExport: false,
-                                },	
-                            }
-                        },
-                        "less-loader",
-                    ],
-                },
+                fileLoader(),
+                styleLoader(),
                 tsLoader(),
                 svgLoader(),
             ],
@@ -145,7 +88,7 @@ export default (env: IEnvVariables) => {
             filename: "[name].js",
             path: path.resolve(__dirname, "build"),
             clean: false,
-            publicPath: '/static/'
+            publicPath: '/'
         },
         devtool: isDev ? 'inline-source-map' : 'source-map',
     };
