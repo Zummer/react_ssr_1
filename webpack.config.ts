@@ -80,7 +80,7 @@ export default (env: IEnvVariables) => {
             filename: "js/[name].[contenthash].js",
             path: path.resolve(__dirname, "build/static"),
             clean: true,
-            // publicPath: '/',
+            publicPath: '/static/',
         },
         devtool: isDev ? 'inline-source-map' : 'source-map',
         devServer: {
@@ -144,8 +144,8 @@ export default (env: IEnvVariables) => {
         output: {
             filename: "[name].js",
             path: path.resolve(__dirname, "build"),
-            // clean: true,
-            // publicPath: '/'
+            clean: false,
+            publicPath: '/static/'
         },
         devtool: isDev ? 'inline-source-map' : 'source-map',
     };
