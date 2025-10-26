@@ -140,7 +140,7 @@
     flex-direction: column;
 
     .headerAgro {
-        font-size: 200%;
+        font-size: 300%;
         font-weight: 600;
     }
 
@@ -163,6 +163,9 @@
     .info {
         font-size: 50%;
     }
+    .columnContainer {
+        font-size: 20px;
+    }
 }
 
 @media (max-height: 600px) {
@@ -178,4 +181,26 @@
 .columnContainer {
     max-width: 1024px;
     margin: 0 auto;
+    padding: 0 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.gallery {
+    color: black;
+
+    .galleryTitle {
+        margin-bottom: 16px;
+    }
+
+    .imagesList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 32px;
+    }
+}
+.paragraphImage {
+    width: 100%;
 }

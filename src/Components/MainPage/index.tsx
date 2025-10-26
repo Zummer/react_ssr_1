@@ -1,8 +1,15 @@
 import style from "./style.less";
-import mainImage from "@/assets/djiagrast40-flying-over-field-540.jpg";
+import mainImage from "@/assets/djiagrast40-flying-over-field-540.webp";
+import spreading from "@/assets/field_spreading_Moment-2048x1152.webp";
 import Logo from "@/assets/logo.svg";
 import Name from "@/assets/name.svg";
+import over from "@/assets/over.webp";
+import ochag from "@/assets/ochag.webp";
+import wet from "@/assets/wet.webp";
+import window from "@/assets/window.webp";
+import heavy from "@/assets/heavy-machine.webp";
 import classnames from "classnames";
+import { ImageBlock } from "../ImageBlock";
 
 export const MainPage = () => {
     return (
@@ -42,6 +49,32 @@ export const MainPage = () => {
                     что особенно актуально в условиях меняющихся погодных условий и 
                     необходимости точного контроля над растениями.`}
                 </p>
+                <img className={style.paragraphImage} src={spreading} alt="Опыление"/>
+                <p>
+                    {`Агродроны обеспечивают точное распределение веществ, минимизируя 
+                    потери и обеспечивая равномерное покрытие полей. Они оснащены 
+                    современными системами навигации и мониторинга, позволяющими 
+                    оператору контролировать процесс обработки дистанционно. 
+                    Благодаря этому повышается эффективность сельскохозяйственных работ, 
+                    снижается риск повреждения культур и улучшается качество урожая.`}
+                </p>
+                <img className={style.paragraphImage} src={over} alt="Дрон над полем"/>
+                <p>
+                    {`Использование агродронов является частью современного подхода 
+                    к сельскому хозяйству, известного как "точное земледелие".
+                     Этот метод включает использование технологий GPS, датчиков и дронов для 
+                     оптимизации процессов выращивания и сбора урожая, снижения затрат
+                      ресурсов и повышения урожайности.`}
+                </p>
+                <div className={style.gallery}>
+                    <div className={style.galleryTitle}>что особенно важно в условиях:</div>
+                    <div className={style.imagesList}>
+                        <ImageBlock src={ochag} alt={"Очаг проблемы"} text={"возникновения отдельных очагов"} />
+                        <ImageBlock src={heavy} alt={"Тяжела техника"} text={"ограничения доступа тяжёлой техники к полю"} />
+                        <ImageBlock src={wet} alt={"Сжатое окно"} text={"сжатого окна между о садками и биологическими фазами"} />
+                        <ImageBlock src={window} alt={"Повышенная влажность"} text={"повышенной влажности почвы и сложного рельефа"} />
+                    </div>
+                </div>
             </div>
         </>
     );
