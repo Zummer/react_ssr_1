@@ -32,7 +32,7 @@ export const MainPage = () => {
                         Мы воплощаем самые смелые мечты в реальность
                     </div>
                 </div>
-                <div className={classnames(style.info, style.columnContainer)}>
+                <div className={style.info}>
                     <div className={style.headerAgro}>Агродрон</div>
                     <div className={style.aboutAgro}>
                         ключевой инструмент для соблюдения графика внесений СЗР,
