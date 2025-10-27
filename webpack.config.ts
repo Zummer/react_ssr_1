@@ -21,6 +21,7 @@ export default (env: IEnvVariables) => {
     console.log('env', env);
 
     const clientConfig: webpack.Configuration = {
+        stats: 'verbose',
         mode,
         target: "web",
         entry: {
@@ -53,7 +54,7 @@ export default (env: IEnvVariables) => {
             clean: true,
             publicPath: '/',
         },
-        devtool: isDev ? 'inline-source-map' : 'source-map',
+        devtool: isDev ? 'inline-source-map' : undefined,
         devServer: {
             port: env.port ?? 3000,
             open: true
@@ -61,6 +62,7 @@ export default (env: IEnvVariables) => {
     };
 
     const serverConfig: webpack.Configuration = {
+        stats: 'verbose',
         mode,
         target: "node",
         entry: {
@@ -90,7 +92,7 @@ export default (env: IEnvVariables) => {
             clean: false,
             publicPath: '/'
         },
-        devtool: isDev ? 'inline-source-map' : 'source-map',
+        devtool: isDev ? 'inline-source-map' : undefined,
     };
 
     return [clientConfig, serverConfig];
