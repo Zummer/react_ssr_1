@@ -8,8 +8,12 @@ import ochag from "@/assets/ochag.jpg";
 import wet from "@/assets/wet.jpg";
 import window from "@/assets/window.jpg";
 import heavy from "@/assets/heavy-machine.jpg";
-import classnames from "classnames";
+import dron1 from "@/assets/dron-over-field-1.jpg";
+import dron2 from "@/assets/dron-over-field-2.jpg";
+import dew from "@/assets/dew.jpg";
+import thermo from "@/assets/thermo.jpg";
 import { ImageBlock } from "../ImageBlock";
+import { Gallary } from "../Gallary";
 
 export const MainPage = () => {
     return (
@@ -49,7 +53,11 @@ export const MainPage = () => {
                     что особенно актуально в условиях меняющихся погодных условий и 
                     необходимости точного контроля над растениями.`}
                 </p>
-                <img className={style.paragraphImage} src={spreading} alt="Опыление"/>
+                <img
+                    className={style.paragraphImage}
+                    src={spreading}
+                    alt="Опыление"
+                />
                 <p>
                     {`Агродроны обеспечивают точное распределение веществ, минимизируя 
                     потери и обеспечивая равномерное покрытие полей. Они оснащены 
@@ -58,7 +66,11 @@ export const MainPage = () => {
                     Благодаря этому повышается эффективность сельскохозяйственных работ, 
                     снижается риск повреждения культур и улучшается качество урожая.`}
                 </p>
-                <img className={style.paragraphImage} src={over} alt="Дрон над полем"/>
+                <img
+                    className={style.paragraphImage}
+                    src={over}
+                    alt="Дрон над полем"
+                />
                 <p>
                     {`Использование агродронов является частью современного подхода 
                     к сельскому хозяйству, известного как "точное земледелие".
@@ -66,15 +78,78 @@ export const MainPage = () => {
                      оптимизации процессов выращивания и сбора урожая, снижения затрат
                       ресурсов и повышения урожайности.`}
                 </p>
-                <div className={style.gallery}>
-                    <div className={style.galleryTitle}>что особенно важно в условиях:</div>
-                    <div className={style.imagesList}>
-                        <ImageBlock src={ochag} alt={"Очаг проблемы"} text={"возникновения отдельных очагов"} />
-                        <ImageBlock src={heavy} alt={"Тяжела техника"} text={"ограничения доступа тяжёлой техники к полю"} />
-                        <ImageBlock src={wet} alt={"Сжатое окно"} text={"сжатого окна между о садками и биологическими фазами"} />
-                        <ImageBlock src={window} alt={"Повышенная влажность"} text={"повышенной влажности почвы и сложного рельефа"} />
-                    </div>
-                </div>
+                <Gallary title="что особенно важно в условиях:">
+                    {[
+                        {
+                            src: ochag,
+                            alt: "Очаг проблемы",
+                            text: "возникновения отдельных очагов",
+                        },
+                        {
+                            src: heavy,
+                            alt: "Тяжела техника",
+                            text: "ограничения доступа тяжёлой техники к полю",
+                        },
+                        {
+                            src: wet,
+                            alt: "Сжатое окно",
+                            text: "сжатого окна между о садками и биологическими фазами",
+                        },
+                        {
+                            src: window,
+                            alt: "Повышенная влажность",
+                            text: "повышенной влажности почвы и сложного рельефа",
+                        },
+                    ].map((props, index) => {
+                        return <ImageBlock key={index} {...props} />;
+                    })}
+                </Gallary>
+                <Gallary title="Что обеспечивает агродрон при внесении удобрений в сравнении с традиционной техникой:">
+                    {[
+                        {
+                            src: dron1,
+                            alt: "Равномерное распределение",
+                            text: `Равномерное распределение
+                                по вегетативной массе —
+                                особенно актуально в фазах бутонизации,
+                                цветения, формирования початков/
+                                корзинок
+                                `,
+                        },
+                        {
+                            src: dron2,
+                            alt: "Снижение потерь",
+                            text: `Снижение потерь при
+                                обработке высокорослых
+                                культур —
+                                обработка выполняется
+                                бесконтактно, исключая
+                                вытаптывание растений`,
+                        },
+                        {
+                            src: dew,
+                            alt: "Обработка сразу",
+                            text: `Обработка сразу
+                                после дождей
+                                в нужную фазу —
+                                без потерь в окне
+                                вегетационного цикла,
+                                без уплотнения почвы`,
+                        },
+                        {
+                            src: thermo,
+                            alt: "Точечная обработка",
+                            text: `Точечная обработка
+                                по мультиспектральной
+                                карте
+                                Возможна обработка только
+                                конкретных очагов сорняков
+                                и болезней`,
+                        },
+                    ].map((props, index) => {
+                        return <ImageBlock key={index} {...props} />;
+                    })}
+                </Gallary>
             </div>
         </>
     );
