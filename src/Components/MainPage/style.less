@@ -1,20 +1,43 @@
 .headerImg {
     height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+
     position: relative;
-    padding: 16px;
+    
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
 
     .headerTitle {
         font-size: 100px;
         font-family: Arial, Tahoma;
         font-weight: 600;
         color: white;
+    }
+
+    .safeZone {
+        width: 100%;
+        height: 5%;
+    }
+
+    .foto {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 60%;
+        width: 100%;
+    }
+
+    .partners {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        height: 5%;
+        // flex-wrap: wrap;
+        padding: 0;
+        max-width: 90%;
     }
 
     .slogan,
@@ -33,32 +56,43 @@
     }
 
     .headerTop {
-        height: 200px;
+        height: 40%;
         display: flex;
         flex-direction: column;
         gap: 12px;
+        align-items: center;
+        width: 100%;
+        padding: 16px;
     }
 
     .headerLogo {
         height: 100%;
         display: flex;
-        gap: 32px;
-        flex-shrink: 0;
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .headerText {
-        width: 100%;
+        width: 80%;
         height: 100%;
+        fill: darkgray;
     }
+    
     .headerSpectr {
-        width: 60%;
-        height: 50%;
+        width: 100%;
     }
 
     .logo {
-        flex-shrink: 0;
-        width: auto;
+        width: 60%;
         height: 100%;
+    }
+
+    @media (max-width: 540px) {
+        .partners {
+            gap: 8px;
+            // width: 90%;
+        }
     }
 
     @media (max-width: 540px) or (max-height: 540px) {
@@ -70,23 +104,35 @@
         .headerLogo {
             gap: 12px;
         }
+        
     }
 
     @media (max-height: 600px) {
         .headerTop {
-            height: 20% !important;
+            height: 30%;
+        }
+        .partners {
+            font-size: 50%;
+        }
+
+        .headerText {
+            height: 70%;
         }
     }
 
     @media (min-height: 600px) {
-        .headerText {
-            height: auto;
-        }
+        // .headerText {
+        //     height: auto;
+        // }
     }
 
     @media (max-width: 768px) {
         .headerTop {
-            height: 120px;
+            // height: 120px;
+        }
+        .partners {
+            font-size: 50%;
+            
         }
         .headerLogo {
             display: flex;

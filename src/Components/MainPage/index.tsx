@@ -1,7 +1,8 @@
 import style from "./style.less";
-import mainImage from "@/assets/djiagrast40-flying-over-field-540.jpg";
+import mainImage from "@/assets/header1.jpg";
 import spreading from "@/assets/field_spreading_Moment-2048x1152.jpg";
 import Logo from "@/assets/logo.svg";
+import SiteName from "@/assets/site.svg";
 import Name from "@/assets/name.svg";
 import over from "@/assets/over.jpg";
 import ochag from "@/assets/ochag.jpg";
@@ -22,29 +23,23 @@ export const MainPage = () => {
         <>
             <div
                 className={style.headerImg}
-                style={{ backgroundImage: `url(${mainImage})` }}
+                
             >
                 <div className={style.headerTop}>
                     <div className={style.headerLogo}>
                         <Logo className={style.logo} />
-                        <div className={style.headerText}>
-                            <Name className={style.headerSpectr} />
-                            <div className={style.slogan}>
-                                Мы воплощаем самые смелые мечты в реальность
-                            </div>
-                        </div>
+                        <Name className={style.headerSpectr} />
                     </div>
-                    <div className={style.slogan2}>
-                        Мы воплощаем самые смелые мечты в реальность
-                    </div>
+                    <SiteName className={style.headerText} />
                 </div>
-                <div className={style.info}>
-                    <div className={style.headerAgro}>Агродрон</div>
-                    <div className={style.aboutAgro}>
-                        ключевой инструмент для соблюдения графика внесений СЗР,
-                        десикации, питания, в критические фазы
-                    </div>
-                </div>
+
+                <div className={style.foto} style={{ backgroundImage: `url(${mainImage})` }}></div>
+                <ul className={style.partners}>
+                    {['наши партнеры', "АГРОНЕБО.РФ", "Горный ЦОД", "Министерство сельского хозяйства НСО"].map((text, index) => {
+                        return <li key={index}>{text}</li>
+                    })}
+                </ul>
+                <div className={style.safeZone}/>
             </div>
             <div className={style.columnContainer}>
                 <div className={style.columnTitle}>
