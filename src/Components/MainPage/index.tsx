@@ -1,13 +1,13 @@
 import style from "./style.less";
-import mainImage from "@/assets/djiagrast40-flying-over-field-540.webp";
-import spreading from "@/assets/field_spreading_Moment-2048x1152.webp";
+import mainImage from "@/assets/djiagrast40-flying-over-field-540.jpg";
+import spreading from "@/assets/field_spreading_Moment-2048x1152.jpg";
 import Logo from "@/assets/logo.svg";
 import Name from "@/assets/name.svg";
-import over from "@/assets/over.webp";
-import ochag from "@/assets/ochag.webp";
-import wet from "@/assets/wet.webp";
-import window from "@/assets/window.webp";
-import heavy from "@/assets/heavy-machine.webp";
+import over from "@/assets/over.jpg";
+import ochag from "@/assets/ochag.jpg";
+import wet from "@/assets/wet.jpg";
+import window from "@/assets/window.jpg";
+import heavy from "@/assets/heavy-machine.jpg";
 import classnames from "classnames";
 import { ImageBlock } from "../ImageBlock";
 
