@@ -10,10 +10,12 @@ import window from "@/assets/window.jpg";
 import heavy from "@/assets/heavy-machine.jpg";
 import dron1 from "@/assets/dron-over-field-1.jpg";
 import dron2 from "@/assets/dron-over-field-2.jpg";
+import dron3 from "@/assets/dron3.jpg";
 import dew from "@/assets/dew.jpg";
 import thermo from "@/assets/thermo.jpg";
 import { ImageBlock } from "../ImageBlock";
 import { Gallary } from "../Gallary";
+import { Image } from "../Image";
 
 export const MainPage = () => {
     return (
@@ -45,6 +47,39 @@ export const MainPage = () => {
                 </div>
             </div>
             <div className={style.columnContainer}>
+                <div className={style.columnTitle}>
+                    {`Хотите увидеть,
+                        как работает дрон
+                        в реальных условиях?`}
+                </div>
+                <ul className={style.demoList}>
+                    {[
+                        `Проведем индивидуальный демо-показ
+                        с выездом к вам`,
+
+                        `Презентуем оборудование:
+                        как устроен дрон
+                        чем он отличается от техники
+                        как обслуживается, управляется`,
+
+                        `Организуем практический полёт на вашем поле:
+                        увидите вживую, как дрон летает, держит маршрут, вносит препарат и работает в автоматическом режиме`,
+
+                        `Проведем демонстрацию распыления:
+                        Вы сможете использовать лакмусовые полоски и оценить на вашей культуре: 
+                        дисперсию,
+                        плотность покрытия,
+                        глубину проникновения капли
+                        `,
+                    ].map((text, index) => {
+                        return <li key={index}>{text}</li>;
+                    })}
+                </ul>
+                <Image
+                    className={style.paragraphImage}
+                    src={dron3}
+                    alt="DJI Agras T50"
+                />
                 <p>
                     {`Агродрон как важный инструмент для поддержания 
                     сельскохозяйственного производства путем внесения средств защиты растений (СЗР),
@@ -53,7 +88,7 @@ export const MainPage = () => {
                     что особенно актуально в условиях меняющихся погодных условий и 
                     необходимости точного контроля над растениями.`}
                 </p>
-                <img
+                <Image
                     className={style.paragraphImage}
                     src={spreading}
                     alt="Опыление"
@@ -66,7 +101,7 @@ export const MainPage = () => {
                     Благодаря этому повышается эффективность сельскохозяйственных работ, 
                     снижается риск повреждения культур и улучшается качество урожая.`}
                 </p>
-                <img
+                <Image
                     className={style.paragraphImage}
                     src={over}
                     alt="Дрон над полем"
