@@ -29,7 +29,10 @@ export const MainPage = () => {
                     </div>
                     <div className={style.headerTextWraper}>
                         <SiteName className={style.headerText} />
+
                     </div>
+                    <div className={style.platform}>платформа по оказанию услуг агродронами</div>
+
                 </div>
 
                 <div

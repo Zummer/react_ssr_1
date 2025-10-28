@@ -2,12 +2,17 @@
     height: 100vh;
 
     position: relative;
-    
+
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+
+    .platform {
+        color: darkgray;
+        text-align: center;
+    }
 
     .headerTitle {
         font-size: 100px;
@@ -44,6 +49,7 @@
         // flex-wrap: wrap;
         padding: 0;
         max-width: 90%;
+        font-size: 80%;
     }
 
     .slogan,
@@ -88,7 +94,7 @@
         height: 100%;
         fill: darkgray;
     }
-    
+
     .headerSpectr {
         width: 100%;
     }
@@ -97,8 +103,6 @@
         width: 60%;
         height: 100%;
     }
-
-
 
     @media (max-width: 540px) or (max-height: 540px) {
         .slogan2 {
@@ -109,35 +113,24 @@
         .headerLogo {
             gap: 12px;
         }
-        
-    }
-
-    @media (max-height: 600px) {
-        .headerTop {
-            height: 30%;
-        }
-        .partners {
-            font-size: 50%;
-        }
     }
 
     @media (min-height: 600px) {
-//
+        //
     }
 
     @media (max-width: 768px) {
-                .foto {
-                background-position-x: 60%;
+        .foto {
+            background-position-x: 60%;
         }
-                .headerTextWraper {
+        .headerTextWraper {
             height: 30%;
         }
         .headerTop {
             // height: 120px;
         }
         .partners {
-            font-size: 50%;
-            
+            font-size: 70%;
         }
         .headerLogo {
             display: flex;
@@ -155,19 +148,40 @@
         }
     }
 
-        @media (max-width: 540px) {
-        .partners {
+    @media (max-height: 600px) {
+        .headerTop {
+            height: 30%;
+            gap: 4px;
+        }
+        .headerImg {
             gap: 8px;
-                    height: 100%;
-        flex-direction: column;
-    
+        }
+
+        .foto {
+            height:47%;
+        }
+        .platform {
+            font-size: 70%;
+        }
+        .partners {
+            font-size: 60%;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .platform {
+            font-size: 65%;
+        }
+        .partners {
+            font-size: 60%;
+            gap: 8px;
+            height: 100%;
+            flex-direction: column;
         }
 
         .headerTextWraper {
             height: 20%;
         }
-
-
     }
 
     .name {
