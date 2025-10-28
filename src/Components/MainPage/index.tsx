@@ -21,25 +21,35 @@ import { Image } from "../Image";
 export const MainPage = () => {
     return (
         <>
-            <div
-                className={style.headerImg}
-                
-            >
+            <div className={style.headerImg}>
                 <div className={style.headerTop}>
                     <div className={style.headerLogo}>
                         <Logo className={style.logo} />
                         <Name className={style.headerSpectr} />
                     </div>
-                    <SiteName className={style.headerText} />
+                    <div className={style.headerTextWraper}>
+                        <SiteName className={style.headerText} />
+                    </div>
                 </div>
 
-                <div className={style.foto} style={{ backgroundImage: `url(${mainImage})` }}></div>
-                <ul className={style.partners}>
-                    {['наши партнеры', "АГРОНЕБО.РФ", "Горный ЦОД", "Министерство сельского хозяйства НСО"].map((text, index) => {
-                        return <li key={index}>{text}</li>
-                    })}
-                </ul>
-                <div className={style.safeZone}/>
+                <div
+                    className={style.foto}
+                    style={{ backgroundImage: `url(${mainImage})` }}
+                ></div>
+                <div className={style.partnersWrapper}>
+                    <ul className={style.partners}>
+                        {[
+                            "наши партнеры",
+                            "АГРОНЕБО.РФ",
+                            "Горный ЦОД",
+                            "Министерство сельского хозяйства НСО",
+                        ].map((text, index) => {
+                            return <li key={index}>{text}</li>;
+                        })}
+                    </ul>
+                </div>
+
+                <div className={style.safeZone} />
             </div>
             <div className={style.columnContainer}>
                 <div className={style.columnTitle}>
