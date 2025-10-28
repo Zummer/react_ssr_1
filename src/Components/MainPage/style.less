@@ -226,6 +226,13 @@
         border-radius: 16px;
     }
 }
+.qrcode {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 65px;
+    height: 65px;
+}
 
 @media (max-width: 600px) {
     .info {
@@ -235,6 +242,10 @@
     .columnContainer {
         font-size: 70%;
         gap: 16px;
+    }
+    .qrcode {
+        height: 55px;
+        width: 55px;
     }
 }
 
@@ -248,12 +259,20 @@
     }
 }
 
+
+
+.headerDivider {
+    border-bottom: 1px darkgray solid;
+    margin: 0 16px 16px;
+}
+
 .columnContainer {
     max-width: 1024px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 32px;
+    padding-top: 16px;
 
     .columnTitle {
         font-size: 146%;

@@ -13,6 +13,7 @@ import dron1 from "@/assets/dron-over-field-1.jpg";
 import dron2 from "@/assets/dron-over-field-2.jpg";
 import dron3 from "@/assets/dron3.jpg";
 import dew from "@/assets/dew.jpg";
+import qrcode from "@/assets/qrcode.jpg";
 import thermo from "@/assets/thermo.jpg";
 import { ImageBlock } from "../ImageBlock";
 import { Gallary } from "../Gallary";
@@ -22,6 +23,7 @@ export const MainPage = () => {
     return (
         <>
             <div className={style.headerImg}>
+                <Image src={qrcode} className={style.qrcode} />
                 <div className={style.headerTop}>
                     <div className={style.headerLogo}>
                         <Logo className={style.logo} />
@@ -54,6 +56,7 @@ export const MainPage = () => {
 
                 <div className={style.safeZone} />
             </div>
+            <div className={style.headerDivider}></div>
             <div className={style.columnContainer}>
                 <p>
                     <div className={style.columnTitle}>
