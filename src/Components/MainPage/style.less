@@ -30,7 +30,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
-        // height: 60%;
         width: 100%;
         flex-grow: 1;
     }
@@ -46,10 +45,9 @@
         list-style: none;
         margin: 0;
         height: 5%;
-        // flex-wrap: wrap;
         padding: 0;
         max-width: 90%;
-        font-size: 80%;
+        font-size: 75%;
     }
 
     .slogan,
@@ -115,19 +113,12 @@
         }
     }
 
-    @media (min-height: 600px) {
-        //
-    }
-
     @media (max-width: 768px) {
         .foto {
             background-position-x: 60%;
         }
         .headerTextWraper {
             height: 30%;
-        }
-        .headerTop {
-            // height: 120px;
         }
         .partners {
             font-size: 70%;
@@ -158,7 +149,9 @@
         }
 
         .foto {
-            height:47%;
+            height: 35%;
+            background-position-y: 30%;
+            flex-grow: 0;
         }
         .platform {
             font-size: 70%;
@@ -225,12 +218,6 @@
         font-weight: 600;
     }
 
-    @media (max-width: 540px) or (max-height: 540px) {
-        .headerAgro {
-            // font-size: 46px;
-        }
-    }
-
     .aboutArgo {
         backdrop-filter: blur(10px);
         background-color: rgba(255 255 255, 0.1);
@@ -254,7 +241,6 @@
 @media (max-height: 600px) {
     .info {
         flex-direction: row;
-        // text-transform: none;
         align-items: center;
         height: 10%;
         font-size: 40%;
@@ -265,7 +251,6 @@
 .columnContainer {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 0 1em 1em 1em;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -273,6 +258,7 @@
     .columnTitle {
         font-size: 146%;
         font-weight: 600;
+        margin-bottom: 32px;
     }
 
     .demoList {

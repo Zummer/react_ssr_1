@@ -29,10 +29,10 @@ export const MainPage = () => {
                     </div>
                     <div className={style.headerTextWraper}>
                         <SiteName className={style.headerText} />
-
                     </div>
-                    <div className={style.platform}>платформа по оказанию услуг агродронами</div>
-
+                    <div className={style.platform}>
+                        платформа по оказанию услуг агродронами
+                    </div>
                 </div>
 
                 <div
@@ -55,34 +55,37 @@ export const MainPage = () => {
                 <div className={style.safeZone} />
             </div>
             <div className={style.columnContainer}>
-                <div className={style.columnTitle}>
-                    {`Хотите увидеть,
+                <p>
+                    <div className={style.columnTitle}>
+                        {`Хотите увидеть,
                         как работает дрон
                         в реальных условиях?`}
-                </div>
-                <ul className={style.demoList}>
-                    {[
-                        `Проведем индивидуальный демо-показ
+                    </div>
+                    <ul className={style.demoList}>
+                        {[
+                            `Проведем индивидуальный демо-показ
                         с выездом к вам`,
 
-                        `Презентуем оборудование:
+                            `Презентуем оборудование:
                         как устроен дрон
                         чем он отличается от техники
                         как обслуживается, управляется`,
 
-                        `Организуем практический полёт на вашем поле:
+                            `Организуем практический полёт на вашем поле:
                         увидите вживую, как дрон летает, держит маршрут, вносит препарат и работает в автоматическом режиме`,
 
-                        `Проведем демонстрацию распыления:
+                            `Проведем демонстрацию распыления:
                         Вы сможете использовать лакмусовые полоски и оценить на вашей культуре: 
                         дисперсию,
                         плотность покрытия,
                         глубину проникновения капли
                         `,
-                    ].map((text, index) => {
-                        return <li key={index}>{text}</li>;
-                    })}
-                </ul>
+                        ].map((text, index) => {
+                            return <li key={index}>{text}</li>;
+                        })}
+                    </ul>
+                </p>
+
                 <Image
                     className={style.paragraphImage}
                     src={dron3}
@@ -194,6 +197,7 @@ export const MainPage = () => {
                     })}
                 </Gallary>
             </div>
+            <div className={style.safeZone}></div>
         </>
     );
 };
