@@ -12,6 +12,10 @@
     .platform {
         color: darkgray;
         text-align: center;
+        position: absolute;
+        right: 5px;
+        font-size: 23px;
+        bottom: -6px;
     }
 
     .headerTitle {
@@ -69,7 +73,6 @@
         height: 30%;
         display: flex;
         flex-direction: column;
-        gap: 12px;
         align-items: center;
         width: 100%;
     }
@@ -82,14 +85,14 @@
     }
 
     .headerTextWraper {
-        width: 80%;
-        height: 40%;
+        position: relative;
     }
 
     .headerText {
-        width: 100%;
-        height: 100%;
-        fill: darkgray;
+        font-size: 114px;
+        font-weight: 600;
+        color: darkgray;
+        text-align: center;
     }
 
     .headerSpectr {
@@ -109,12 +112,22 @@
         }
     }
 
+    @media (max-width: 920px) {
+        .headerText {
+            font-size: 95px;
+        }
+
+        .platform {
+            font-size: 19px;
+        }
+    }
+
     @media (max-width: 768px) {
         .foto {
             background-position-x: 60%;
         }
-        .headerTextWraper {
-            height: 30%;
+        .headerText {
+            font-size: 67px;
         }
         .partners {
             font-size: 70%;
@@ -129,12 +142,16 @@
         .slogan {
             display: none;
         }
+        .platform {
+            font-size: 65%;
+            position: static;
+            text-align: center;
+        }
     }
 
     @media (max-height: 600px) {
         .headerTop {
-            height: 30%;
-            gap: 4px;
+            height: 40%;
         }
         .headerImg {
             gap: 8px;
@@ -145,8 +162,12 @@
             background-position-y: 30%;
             flex-grow: 0;
         }
+
+        .headerText {
+            font-size: 63px;
+        }
         .platform {
-            font-size: 70%;
+            font-size: 12px;
         }
         .partners {
             font-size: 60%;
@@ -154,9 +175,6 @@
     }
 
     @media (max-width: 540px) {
-        .platform {
-            font-size: 65%;
-        }
         .partners {
             font-size: 60%;
             gap: 8px;
@@ -164,8 +182,14 @@
             flex-direction: column;
         }
 
-        .headerTextWraper {
-            height: 20%;
+        .headerText {
+            font-size: 50px;
+        }
+    }
+
+    @media (max-width: 470px) {
+        .headerText {
+            font-size: 37px;
         }
     }
 
