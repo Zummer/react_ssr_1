@@ -42,11 +42,21 @@ export const MainPage = () => {
                 <div
                     className={style.foto}
                     style={{ backgroundImage: `url(${mainImage})` }}
-                ></div>
+                >
+                    <ul className={style.uslugi}>
+     {['Агродроны\nдля сельского\nхозяйства',
+                        'Сервис\nи запчасти\nк агродронам',
+                        'Профессиональные\nпилоты\nагродронов'].map((text, index) => {
+                            return <li key={index}>{text}</li>;
+                        })}
+
+                    </ul>
+               
+                </div>
                 <div className={style.partnersWrapper}>
                     <ul className={style.partners}>
+                        <div>наши партнеры:</div>
                         {[
-                            "наши партнеры",
                             "АГРОНЕБО.РФ",
                             "Горный ЦОД",
                             "Министерство сельского хозяйства НСО",

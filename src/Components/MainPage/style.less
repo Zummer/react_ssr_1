@@ -38,6 +38,18 @@
         flex-grow: 1;
     }
 
+    .uslugi {
+        font-size: 20px;
+        display: flex;
+        max-width: 1024px;
+        list-style: none;
+        gap: 16px;
+        padding: 24px;
+        font-weight: 600;
+        white-space: break-spaces;
+        margin: 0 auto;
+    }
+
     .partnersWrapper {
         width: 90%;
         align-items: flex-start;
@@ -164,7 +176,7 @@
         }
 
         .headerText {
-            font-size: 63px;
+            font-size: 60px;
         }
         .platform {
             font-size: 12px;
@@ -174,12 +186,26 @@
         }
     }
 
+    @media (max-height: 400px) {
+        .headerText {
+            font-size: 50px;
+        }
+        .platform {
+            font-size: 10px;
+        }
+    }
+
     @media (max-width: 540px) {
         .partners {
             font-size: 60%;
             gap: 8px;
             height: 100%;
             flex-direction: column;
+        }
+
+        .uslugi {
+            font-size: 12px;
+            padding: 16px;
         }
 
         .headerText {
@@ -210,6 +236,9 @@
         }
         .slogan {
             display: block;
+        }
+        .uslugi {
+            font-size: 15px;
         }
     }
 }
