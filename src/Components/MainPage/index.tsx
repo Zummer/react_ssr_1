@@ -16,6 +16,7 @@ import { Gallary } from "../Gallary";
 import { Image } from "../Image";
 import { InfoBlock } from "../InfoBlock";
 import classnames from "classnames";
+import { SiteFooter } from "../SiteFooter";
 
 export const MainPage = () => {
     return (
@@ -54,12 +55,15 @@ export const MainPage = () => {
                         <div className={style.partnersBlock} key="key_1">
                             <div>Наши партнеры:</div>
                             <ul key="ul_1">
-                                {[
-                                    "ООО Горный ЦОД",
-                                    "АГРОНЕБО.РФ",
-                                ].map((text, index) => {
-                                    return <li key={`ul_1_${index}`}>{text}</li>;
-                                })}
+                                {["ООО Горный ЦОД", "АГРОНЕБО.РФ"].map(
+                                    (text, index) => {
+                                        return (
+                                            <li key={`ul_1_${index}`}>
+                                                {text}
+                                            </li>
+                                        );
+                                    }
+                                )}
                             </ul>
                         </div>
                         <div className={style.partnersBlock} key="key_2">
@@ -67,29 +71,34 @@ export const MainPage = () => {
                             <ul key="ul_2">
                                 {[
                                     "Министерства сельского хозяйства НСО",
-                                    "Представителя президента по СФО"
+                                    "Представителя президента по СФО",
                                 ].map((text, index) => {
-                                    return <li key={`ul_2_${index}`}>{text}</li>;
+                                    return (
+                                        <li key={`ul_2_${index}`}>{text}</li>
+                                    );
                                 })}
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
                 <div className={style.safeZone} />
             </div>
             <div className={style.headerDivider}></div>
             <div className={style.columnContainer}>
                 <InfoBlock />
-                        
+
                 <p>
-                     <div className={classnames(style.columnTitle, style.afterInfoBlock)}>
+                    <div
+                        className={classnames(
+                            style.columnTitle,
+                            style.afterInfoBlock
+                        )}
+                    >
                         {`В результате работы  
                         агродрон  увеличивает
                         выручку  с каждого гектара 
                         в среднем на 11%`}
-
-                     </div>
+                    </div>
                 </p>
 
                 <div className={style.headerDivider}></div>
@@ -210,6 +219,7 @@ export const MainPage = () => {
                     })}
                 </Gallary>
             </div>
+            <SiteFooter />
             <div className={style.safeZone}></div>
         </>
     );
