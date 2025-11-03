@@ -4,9 +4,6 @@ export const tsLoader = () => {
         use: [
             {
                 loader: "ts-loader",
-                // options: {
-                //     transpileOnly: true,
-                // }
             }
         ],
         exclude: /node_modules/,

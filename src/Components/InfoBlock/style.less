@@ -1,0 +1,43 @@
+.infoBlock {
+    display: flex;
+    gap: 32px;
+    font-weight: 600;
+
+    .column {
+        display: flex;
+        gap: 32px;
+        height: 100%;
+        flex-wrap: wrap;
+
+        > * {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 60px;
+            color: white;
+            -webkit-text-stroke: 1px black;
+        }
+
+        .description {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .infoBlock {
+        flex-wrap: wrap;
+
+        .column {
+            .title {
+                font-size: 35px;
+                padding: 0 32px;
+            }
+            .description {
+                font-size: 15px;
+                padding: 0 32px;
+            }
+        }
+    }
+}

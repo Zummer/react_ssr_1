@@ -1,10 +1,7 @@
 import style from "./style.less";
 import mainImage from "@/assets/header1.jpg";
-import spreading from "@/assets/field_spreading_Moment-2048x1152.jpg";
 import Logo from "@/assets/logo.svg";
-import SiteName from "@/assets/site.svg";
 import Name from "@/assets/name.svg";
-import over from "@/assets/over.jpg";
 import ochag from "@/assets/ochag.jpg";
 import wet from "@/assets/wet.jpg";
 import window from "@/assets/window.jpg";
@@ -13,26 +10,25 @@ import dron1 from "@/assets/dron-over-field-1.jpg";
 import dron2 from "@/assets/dron-over-field-2.jpg";
 import dron3 from "@/assets/dron3.jpg";
 import dew from "@/assets/dew.jpg";
-import qrcode from "@/assets/qrcode.jpg";
 import thermo from "@/assets/thermo.jpg";
 import { ImageBlock } from "../ImageBlock";
 import { Gallary } from "../Gallary";
 import { Image } from "../Image";
+import { InfoBlock } from "../InfoBlock";
+import classnames from "classnames";
 
 export const MainPage = () => {
     return (
         <>
             <div className={style.headerImg}>
-                <Image src={qrcode} className={style.qrcode} />
+                {/* <Image src={qrcode} className={style.qrcode} /> */}
                 <div className={style.headerTop}>
                     <div className={style.headerLogo}>
                         <Logo className={style.logo} />
                         <Name className={style.headerSpectr} />
                     </div>
                     <div className={style.headerTextWraper}>
-                        <div className={style.headerText}>
-                            dronagrostan.ru
-                        </div>
+                        <div className={style.headerText}>dronagrostan.ru</div>
                         <div className={style.platform}>
                             платформа по оказанию услуг агродронами
                         </div>
@@ -44,32 +40,60 @@ export const MainPage = () => {
                     style={{ backgroundImage: `url(${mainImage})` }}
                 >
                     <ul className={style.uslugi}>
-     {['Агродроны\nдля сельского\nхозяйства',
-                        'Сервис\nи запчасти\nк агродронам',
-                        'Профессиональные\nпилоты\nагродронов'].map((text, index) => {
-                            return <li key={index}>{text}</li>;
-                        })}
-
-                    </ul>
-               
-                </div>
-                <div className={style.partnersWrapper}>
-                    <ul className={style.partners}>
-                        <div>наши партнеры:</div>
                         {[
-                            "АГРОНЕБО.РФ",
-                            "Горный ЦОД",
-                            "Министерство сельского хозяйства НСО",
+                            "Агродроны\nдля сельского\nхозяйства",
+                            "Сервис\nи запчасти\nк агродронам",
+                            "Профессиональные\nпилоты\nагродронов",
                         ].map((text, index) => {
                             return <li key={index}>{text}</li>;
                         })}
                     </ul>
                 </div>
-
+                <div className={style.partners}>
+                    <div className={style.partnersChild}>
+                        <div className={style.partnersBlock} key="key_1">
+                            <div>Наши партнеры:</div>
+                            <ul key="ul_1">
+                                {[
+                                    "ООО Горный ЦОД",
+                                    "АГРОНЕБО.РФ",
+                                ].map((text, index) => {
+                                    return <li key={`ul_1_${index}`}>{text}</li>;
+                                })}
+                            </ul>
+                        </div>
+                        <div className={style.partnersBlock} key="key_2">
+                            <div>При поддержке:</div>
+                            <ul key="ul_2">
+                                {[
+                                    "Министерства сельского хозяйства НСО",
+                                    "Представителя президента по СФО"
+                                ].map((text, index) => {
+                                    return <li key={`ul_2_${index}`}>{text}</li>;
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
                 <div className={style.safeZone} />
             </div>
             <div className={style.headerDivider}></div>
             <div className={style.columnContainer}>
+                <InfoBlock />
+                        
+                <p>
+                     <div className={classnames(style.columnTitle, style.afterInfoBlock)}>
+                        {`В результате работы  
+                        агродрон  увеличивает
+                        выручку  с каждого гектара 
+                        в среднем на 11%`}
+
+                     </div>
+                </p>
+
+                <div className={style.headerDivider}></div>
+
                 <p>
                     <div className={style.columnTitle}>
                         {`Хотите увидеть,
@@ -105,32 +129,6 @@ export const MainPage = () => {
                     className={style.paragraphImage}
                     src={dron3}
                     alt="DJI Agras T50"
-                />
-                <p>
-                    {`Агродрон как важный инструмент для поддержания 
-                    сельскохозяйственного производства путем внесения средств защиты растений (СЗР),
-                    десикации и питания растений в ключевые периоды роста. Это устройство 
-                    позволяет эффективно соблюдать график обработок, 
-                    что особенно актуально в условиях меняющихся погодных условий и 
-                    необходимости точного контроля над растениями.`}
-                </p>
-                <Image
-                    className={style.paragraphImage}
-                    src={spreading}
-                    alt="Опыление"
-                />
-                <p>
-                    {`Агродроны обеспечивают точное распределение веществ, минимизируя 
-                    потери и обеспечивая равномерное покрытие полей. Они оснащены 
-                    современными системами навигации и мониторинга, позволяющими 
-                    оператору контролировать процесс обработки дистанционно. 
-                    Благодаря этому повышается эффективность сельскохозяйственных работ, 
-                    снижается риск повреждения культур и улучшается качество урожая.`}
-                </p>
-                <Image
-                    className={style.paragraphImage}
-                    src={over}
-                    alt="Дрон над полем"
                 />
                 <p>
                     {`Использование агродронов является частью современного подхода 
