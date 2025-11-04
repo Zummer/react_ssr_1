@@ -1,3 +1,4 @@
+import { Divider } from "../Divider";
 import style from "./style.less";
 
 export const SiteFooter = () => {
@@ -5,11 +6,12 @@ export const SiteFooter = () => {
         <div className={style.footerWrapper}>
             <div className={style.footer}>
                 <div className={style.header}>Контакты:</div>
+                <Divider />
                 <div className={style.contacts}>
                     <div className={style.address}>
                         <div className={style.contactsHeader}>Адрес:</div>
                         <div className={style.contactsValue}>
-                            г. Новосибирск, проспект Дзержинского, 69/2
+                            {'г. Новосибирск,\nпроспект Дзержинского, 69/2'}
                         </div>
                     </div>
                     <div className={style.phones}>
